@@ -4,6 +4,327 @@
 @import 'reset';  // сброс стилей
 @import 'global'; // глобальные стили всего проекта
 
+.header {
+	min-height: 800px;
+	background: #F0F0F0;
+	padding-top: 16px;
+	overflow: hidden;
+   position: relative;
+
+}
+
+.header-top {
+	&__inner{
+		height: 69px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+.logo {
+	&__img{
+		height: 69px;
+	}
+}
+
+.menu {
+	&__list{
+		display: flex;
+	}
+	&__list-item{
+		margin-right: 64px;
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+	&__list-link{
+		font-size: 18px;
+		color: #000000;
+		@extend %montserrat-600;
+	}
+}
+
+.header-content {
+	&__inner{
+		display: flex;
+		flex-direction: row;
+		position: relative;
+	}
+	&__left-wrap{
+		position: relative;
+	}
+	&__img{
+		position: relative;
+		z-index: 5;
+	}
+	&__rectangle-blue{
+		position: absolute;
+		top: 150px;
+		left: -50px;
+		width: 565.95px;
+		height: 220px;
+		background: $color-blue;
+		border-radius: 100px;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		transform: rotate(-64deg);
+		z-index: 2;
+	}
+	&__rectangle-orange{
+		position: absolute;
+		top: 160px;
+		left: -30px;
+		width: 618.43px;
+		height: 220px;
+		background: $color-orange;
+		border-radius: 100px;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		transform: rotate(-50.81deg);
+		z-index: 3;
+	}
+	&__rectangle-grey{
+		position: absolute;
+		top: 190px;
+		left: 10px;
+		width: 608.97px;
+		height: 220px;
+		background: $color-grey;
+		border-radius: 100px;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		transform: rotate(-36.15deg);
+		z-index: 1;
+	}
+	&__right-wrap {
+		width: 372px;
+		position: absolute;
+		top: 150px;
+		right: 76px;
+		z-index: 5;
+	}
+	&__text{
+		font-size: 16px;
+		@extend %montserrat-400;
+		margin-bottom: 20px;
+	}
+	&__first-elipse{
+		position: absolute;
+		top: 129px;
+		right: 80px;
+	}
+	&__second-elipse{
+		position: absolute;
+		top: 650px;
+		right: -120px;
+	}
+}
+
+.elipse {
+	width: 194px;
+	height: 194px;
+	background: linear-gradient(143.92deg, rgba(237, 123, 80, 0.5) 14.85%, rgba(72, 138, 234, 0.5) 53.25%, rgba(44, 44, 44, 0.5) 85.74%);
+	border-radius: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&__subtract{
+		width: 129.33px;
+		height: 129.33px;
+		background: #F0F0F0;
+		border-radius: 150px;
+	}
+	&__subtract--big{
+		width: 188px;
+		height: 188px;
+	}
+}
+
+.elipse--big {
+	width: 282px;
+	height: 282px;
+}
+
+.teach {
+	min-height: 700px;
+	padding-top: 32px;
+	overflow: hidden;
+	&__inner{
+		position: relative;
+	}
+	&__title{
+		margin-bottom: 40px;
+	}
+	&__cards-items{
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: space-between;
+		margin-bottom: 25px;
+	}
+	&__cards-item{
+		width: 360px;
+		height: 360px;
+		background: #E2E2E2;
+		border-radius: 10px;
+		display: flex;
+		align-items: flex-end;
+		position: relative;
+	}
+	&__cards-item--orange{
+		background: $color-orange;
+	}
+	&__cards-item--blue{
+		background: $color-blue;
+	}
+	&__cards-img{
+		height: 335px;
+	}
+	&__cards-text{
+		width: 280px;
+		font-size: 36px;
+		@extend %montserrat-600;
+		text-align: center;
+		transform: rotate(90deg);
+		position: absolute;
+		top: 140px;
+		right: -45px;
+	}
+	&__icons-items{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+	}
+	&__icons-item{
+		display: flex;
+		align-items: center;
+	}
+	&__icons-img{
+		width: 80px;
+		margin-right: 20px;
+	}
+	&__icons-text{
+		font-size: 18px;
+		@extend %montserrat-400;
+		span{
+			font-size: 48px;
+			@extend %montserrat-600;
+		}
+	}
+	&__first-elipse{
+		position: absolute;
+		top: 53px;
+		right: -72px;
+		z-index: -1;
+	}
+	&__second-elipse{
+		position: absolute;
+		top: 351px;
+		left: -72px;
+		z-index: -1;
+	}
+}
+
+.about-teach {
+	min-height: 640px;
+	background: #F0F0F0;
+	position: relative;
+	z-index: 0;
+	overflow: hidden;
+	&__inner{
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		padding: 46px 0;
+		padding-left: 167px;
+		position: relative;
+	}
+	&__right-wrap{
+		max-width: 480px;
+	}
+	&__right-title{
+		margin-bottom: 20px;
+	}
+	&__text{
+		margin-bottom: 30px;
+		font-size: 18px;
+		@extend %montserrat-400;
+	}
+	&__first-elipse{
+		position: absolute;
+		top: 140px;
+		left: 110px;
+		z-index: -1;
+	}
+	&__figure-img{
+		position: absolute;
+		top: 249px;
+		left: 15px;
+		z-index: -1;
+	}
+	&__second-elipse{
+		position: absolute;
+		top: -120px;
+		right: -120px;
+	}
+}
+
+.title__hr--top {
+	bottom: 75px;
+}
+
+.footer {
+	&__inner{
+		min-height: 272px;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+	}
+	&__img{
+		position: absolute;
+		left: -250px;
+		bottom: 0;
+	}
+	&__title{
+		margin-bottom: 20px;
+	}
+	&__social-box{
+		padding-left: 0;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
