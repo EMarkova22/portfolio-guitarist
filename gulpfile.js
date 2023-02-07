@@ -25,6 +25,9 @@ const browserSync = require('browser-sync').create();
 // Подключаем imagemin для работы с изображениями
 const imagemin = require('gulp-imagemin');
 
+// Подключаем для выгрузки страницы на github pages
+const ghPages = require('gulp-gh-pages');
+
 // Подключаем del для очистки папки dist
 const del = require('del');
 
@@ -124,6 +127,14 @@ function watching() {
 
 
 
+function deploy() {
+	return src('./dist/**/*')
+	pipe(deploy({
+		remoteUrl: "https://emarkova22.github.io/portfolio-guitarist/",
+		branch: "main"
+	}))
+};
+
 
 
 
@@ -147,8 +158,10 @@ exports.browsersync = browsersync;
 // Удаление всех папок в /'dust'
 exports.cleanDist = cleanDist;
 
+exports.deploy = deploy;
+
 // Создаём новый таск "build", который последовательно выполняет нужные операции
-exports.build = series(cleanDist, styles, scripts, images, build);
+exports.build = series(cleanDist, styles, scripts, images, build, deploy);
 
 // Экспортируем дефолтный таск с нужным набором функций
-exports.default = parallel(styles, scripts, browsersync, watching);
+exports.default = parallel(styles, scripts, browsersync, watching, deploy);
