@@ -158,10 +158,9 @@ exports.browsersync = browsersync;
 // Удаление всех папок в /'dust'
 exports.cleanDist = cleanDist;
 
-exports.deploy = deploy;
 
 // Создаём новый таск "build", который последовательно выполняет нужные операции
-exports.build = series(cleanDist, styles, scripts, images, build, deploy);
+exports.build = series(cleanDist, styles, scripts, images, build);
 
 // Экспортируем дефолтный таск с нужным набором функций
-exports.default = parallel(styles, scripts, browsersync, watching, deploy);
+exports.default = parallel(styles, scripts, browsersync, watching);
